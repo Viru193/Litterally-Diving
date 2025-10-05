@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7104724894901602916}
   - component: {fileID: 8862858996386195789}
   - component: {fileID: 841391116553952983}
+  - component: {fileID: 7686118414404528214}
   m_Layer: 0
   m_Name: Fish2
   m_TagString: Fish
@@ -96,7 +97,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2810534839636224841}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5635992463b3cb340a4ee15961498f55, type: 2}
   m_CullingMode: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   isFishL: 1
   isFishR: 0
   isShark: 0
+  isDangerFish: 0
 --- !u!58 &841391116553952983
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -188,3 +190,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &7686118414404528214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810534839636224841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d9866346e6459438862024d45c6689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frame1: {fileID: -771941901, guid: 02c9c2a4b79fb9c47878735c66c6873a, type: 3}
+  frame2: {fileID: 1327142208, guid: 02c9c2a4b79fb9c47878735c66c6873a, type: 3}

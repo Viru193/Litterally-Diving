@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82a9340a35abd724e8f11854a40016bc
+guid: 278f03acb7e13194bb466147185f1c7a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,19 +82,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_0
+      name: Squid_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 94
-        width: 33
-        height: 15
+        x: 0
+        y: 32
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66642738d4f994f42bbef7439ac301c0
-      internalID: -1461006952
+      spriteID: 1565333f708bd73408d528a52d4c366d
+      internalID: -1919138824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_1
+      name: Squid_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 93
-        width: 31
-        height: 15
+        x: 64
+        y: 32
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a0d53b2e64f3854e864d9943c03d596
-      internalID: -44926109
+      spriteID: 7f2e3d26bfd6ed64a96783d703eab48e
+      internalID: 1213240210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_2
+      name: Squid_2
       rect:
         serializedVersion: 2
-        x: 12
-        y: 17
-        width: 36
-        height: 28
+        x: 128
+        y: 32
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f5483144e2d032499e571d3a735d9f3
-      internalID: 1631443523
+      spriteID: d0aeb0110230a86408916bdd368424e8
+      internalID: -2101823470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_3
+      name: Squid_3
       rect:
         serializedVersion: 2
-        x: 78
-        y: 19
-        width: 34
-        height: 26
+        x: 192
+        y: 32
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +200,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c3388394ca2dc746ad9ce7716b19dbb
-      internalID: 1801719541
+      spriteID: ffca528fff8d1fd4eb3ab22f7caf922b
+      internalID: 1883243773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8871656cb3bbc164fa95513e4ccfd369
+      internalID: 181107580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d4857492ac2f948aee100da37503c4
+      internalID: -1644498272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86837d38c9829a47b3732be3ba9934a
+      internalID: 1500914242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3f29ad5e44e6341bc7fd194773e9eb
+      internalID: 691602891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99a2e5641eef114a8b74d0bc9de14a8
+      internalID: -180753733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4caf9436dc4443d4ba62d6714f321e37
+      internalID: -1950060158
       vertices: []
       indices: 
       edges: []
@@ -230,10 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      puffer-fish-sprites-64x64-no-scale-up_0: -1461006952
-      puffer-fish-sprites-64x64-no-scale-up_1: -44926109
-      puffer-fish-sprites-64x64-no-scale-up_2: 1631443523
-      puffer-fish-sprites-64x64-no-scale-up_3: 1801719541
+      Squid_0: -1919138824
+      Squid_1: 1213240210
+      Squid_2: -2101823470
+      Squid_3: 1883243773
+      Squid_4: 181107580
+      Squid_5: -1644498272
+      Squid_6: 1500914242
+      Squid_7: 691602891
+      Squid_8: -180753733
+      Squid_9: -1950060158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

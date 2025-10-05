@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 2132356507
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cafdae383ed91df47957fc3fa240003d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a27674abc882ef741867b2b6beef4435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -129,6 +129,8 @@ MonoBehaviour:
   balloonPrefab: {fileID: 7699569953740593351, guid: c3c794c9fe5e84147a6aa016b9762e9a, type: 3}
   pointValue: 10
   balloonMode: 0
+  theBalloon: {fileID: 0}
+  draggedFish: {fileID: 0}
 --- !u!1 &5808558547010632923
 GameObject:
   m_ObjectHideFlags: 0
