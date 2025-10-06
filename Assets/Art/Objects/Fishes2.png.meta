@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82a9340a35abd724e8f11854a40016bc
+guid: d1f8eb26efbb9994e9d8568e71ce109e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,19 +82,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_0
+      name: Fishes2_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 94
-        width: 33
-        height: 15
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66642738d4f994f42bbef7439ac301c0
-      internalID: -1461006952
+      spriteID: d0f47f6c4e99aa14b9d0211c504b1130
+      internalID: 233317071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_1
+      name: Fishes2_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 93
-        width: 31
-        height: 15
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a0d53b2e64f3854e864d9943c03d596
-      internalID: -44926109
+      spriteID: 90acdb9a7795be34592535dc8a8ad900
+      internalID: 901865707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_2
+      name: Fishes2_2
       rect:
         serializedVersion: 2
-        x: 12
-        y: 17
-        width: 36
-        height: 28
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f5483144e2d032499e571d3a735d9f3
-      internalID: 1631443523
+      spriteID: 974ca3fe928aa7449a676a5d5d946611
+      internalID: 216578916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puffer-fish-sprites-64x64-no-scale-up_3
+      name: Fishes2_3
       rect:
         serializedVersion: 2
-        x: 78
-        y: 19
-        width: 34
-        height: 26
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +200,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c3388394ca2dc746ad9ce7716b19dbb
-      internalID: 1801719541
+      spriteID: 0f01583ea54fd59479836be6bd413b0d
+      internalID: -221109462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishes2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2579f1cdab227904695ff48354ce4d89
+      internalID: -900443829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishes2_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719e4fd11d2ef2c4287c4d1381c62ad5
+      internalID: 774624488
       vertices: []
       indices: 
       edges: []
@@ -230,10 +259,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      puffer-fish-sprites-64x64-no-scale-up_0: -1461006952
-      puffer-fish-sprites-64x64-no-scale-up_1: -44926109
-      puffer-fish-sprites-64x64-no-scale-up_2: 1631443523
-      puffer-fish-sprites-64x64-no-scale-up_3: 1801719541
+      Fishes2_0: 233317071
+      Fishes2_1: 901865707
+      Fishes2_2: 216578916
+      Fishes2_3: -221109462
+      Fishes2_4: -900443829
+      Fishes2_5: 774624488
+      Fishes2_6: 506570801
+      Fishes2_7: -1951228128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
