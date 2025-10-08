@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DangerFish : MonoBehaviour
 {
     public enum FishType
     {
-        BalloonBreaker, Attacker, PufferFish, Squid
+        BalloonBreaker, Sailfish, PufferFish, Squid
     }
     public FishType fishType = FishType.BalloonBreaker;
     public string balloonTag = "Balloon";
@@ -16,9 +17,10 @@ public class DangerFish : MonoBehaviour
     public string popTriggerName = "Pop";
 
     [Header("Serang Dimas")]
-    public int damageToPlayer = 50;
-    public float attackCooldown = 1.5f;
-    public float chaseRange = 5f;
+    public int damageToPlayer = 100;
+    public string attackTrigger = "Attack";
+    // public float attackCooldown = 1.5f;
+    // public float chaseRange = 5f;
     public float moveSpeed = 3f;
 
     [Header("Alif Mengembang")]
@@ -26,7 +28,10 @@ public class DangerFish : MonoBehaviour
     public float inflateDelay = 0.5f;
     public string inflateTrigger = "Inflate";
 
-    // [Header("Davin Menyemburkan")]
+    [Header("Davin Menyemburkan")]
+    public float inkRange = 3f;
+    public GameObject inkEffectPrefab;
+    public float inkDuration = 3f;
 
     // private GameObject currentBalloon;
     private TrashPoint attachedTrashPoint;
@@ -36,10 +41,9 @@ public class DangerFish : MonoBehaviour
     // private AudioSource audioSource;
     private Transform player;
 
-    private float nextAttackTime;
-    private bool isChasing;
-    private bool hasAttacked = false;
+    private bool hasKilledPlayer = false;
     private bool isInflating = false;
+    private bool hasInked = false;
 
     private Camera mainCam;
 
@@ -52,7 +56,7 @@ public class DangerFish : MonoBehaviour
         animator = GetComponent<Animator>();
         mainCam = Camera.main;
 
-        if (fishType == FishType.Attacker)
+        if (fishType == FishType.Sailfish)
         {
             Collider2D col = GetComponent<Collider2D>();
             if (col != null) col.isTrigger = true; 
@@ -66,22 +70,70 @@ public class DangerFish : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (fishType == FishType.Attacker)
-        {
-            if (player == null || hasAttacked) return;
-
-            float distance = Vector2.Distance(transform.position, player.position);
-            if (distance <= chaseRange)
-                ChasePlayer();
-            else if (animator != null)
-            {
-                animator.SetBool("isChasing", false);
-                animator.SetFloat("SwimSpeed", 0f);
-            }
-        }
-        else if (fishType == FishType.PufferFish)
+        if (fishType == FishType.PufferFish)
         {
             DetectAndInflate();
+        }
+
+        if (fishType == FishType.Squid)
+            DetectAndInk();
+
+        if (fishType == FishType.Sailfish && !hasKilledPlayer && mainCam != null) 
+        {
+
+            Vector3 viewPos = mainCam.WorldToViewportPoint(transform.position);
+            if (viewPos.x < -1.5f)
+                transform.position = new Vector3(Screen.width + 1f, transform.position.y, transform.position.z);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+         Debug.Log("DangerFish menabrak: " + other.name + " (tag: " + other.tag + ")");
+
+        // Jika mengenai balon
+        if ((fishType == FishType.BalloonBreaker || fishType == FishType.Sailfish) && other.CompareTag(balloonTag))
+        {
+            attachedTrashPoint = other.GetComponentInParent<TrashPoint>();
+            if (attachedTrashPoint != null)
+                PopBalloon();
+        }
+        
+        if (fishType == FishType.Sailfish && (other.CompareTag("WallL") || other.CompareTag("WallR")))
+            return;
+
+        Debug.Log("DangerFish menabrak: " + other.name + " (tag: " + other.tag + ")");
+
+        if (fishType == FishType.Sailfish && other.CompareTag("Player") && !hasKilledPlayer)
+        {
+            hasKilledPlayer = true; rb.velocity = Vector2.zero;
+            if (fishController != null)
+                fishController.enabled = false;
+            // animasi serang 
+            if (animator != null && !string.IsNullOrEmpty(attackTrigger))
+                animator.SetTrigger(attackTrigger);
+            // bunuh player 
+            PlayerController pc = other.GetComponent<PlayerController>();
+            if (pc != null)
+                pc.TakeDamage(damageToPlayer);
+            // panggil game over 
+            GameManagerr gm = FindObjectOfType<GameManagerr>();
+            if (gm != null)
+                gm.LoseFish();
+            Debug.Log("Sailfish menyerang player → Game Over!");
+        }
+    }
+
+    void DetectAndInk() 
+    {
+        if (player == null || hasInked || inkEffectPrefab == null) return;
+        float dist = Vector2.Distance(transform.position, player.position);
+        Debug.Log("Cek jarak Squid ke Player: " + dist);
+        if (dist <= inkRange)
+        {
+            hasInked = true;
+            Debug.Log("🦑 Squid menyemprot tinta!");
+            StartCoroutine(SprayInk());
         }
     }
 
@@ -101,6 +153,18 @@ public class DangerFish : MonoBehaviour
         }
     }
 
+    IEnumerator SprayInk()
+    {
+        GameObject canvas = GameObject.Find("Canvas");
+        if (canvas != null && inkEffectPrefab != null)
+        {
+            GameObject ink = Instantiate(inkEffectPrefab, canvas.transform);
+            yield return new WaitForSeconds(inkDuration + 1f);
+            Destroy(ink);
+        }
+        hasInked = false;
+    }
+
     IEnumerator InflateAndPop(GameObject balloon)
     {
         isInflating = true;
@@ -116,7 +180,6 @@ public class DangerFish : MonoBehaviour
             if (tp != null)
             {
                 tp.balloonMode = false;
-
                 Destroy(tp.theBalloon);
 
                 Rigidbody2D trashRb = tp.GetComponent<Rigidbody2D>();
@@ -134,37 +197,20 @@ public class DangerFish : MonoBehaviour
         isInflating = false;
     }
 
-    void ChasePlayer()
-    {
-        Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * moveSpeed;
+    // void ChasePlayer()
+    // {
+    //     Vector2 direction = (player.position - transform.position).normalized;
+    //     rb.velocity = direction * moveSpeed;
 
-        if (direction.x > 0)
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        else if (direction.x < 0)
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+    //     if (direction.x > 0)
+    //         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+    //     else if (direction.x < 0)
+    //         transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
-        if (animator != null)
-            animator.SetBool("isChasing", true);
+    //     if (animator != null)
+    //         animator.SetBool("isChasing", true);
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("DangerFish menabrak: " + other.name + " (tag: " + other.tag + ")");
-
-        if (fishType == FishType.BalloonBreaker && other.CompareTag(balloonTag))
-        {
-            attachedTrashPoint = other.GetComponentInParent<TrashPoint>();
-            if (attachedTrashPoint != null)
-                PopBalloon();
-        }
-
-        else if (fishType == FishType.Attacker && other.CompareTag("Player"))
-        {
-            AttackPlayer(other.gameObject);
-        }
-    }
+    // }
 
     void PopBalloon()
     {
@@ -223,57 +269,6 @@ public class DangerFish : MonoBehaviour
         attachedTrashPoint.SendMessage("ReleaseFish", SendMessageOptions.DontRequireReceiver);
         Debug.Log("Balon dipecahkan oleh DangerFish!");
     }
-
-    void AttackPlayer(GameObject playerObj)
-    {
-        if (hasAttacked) return;
-        PlayerController pc = player.GetComponent<PlayerController>();
-        if (pc != null)
-        {
-            pc.TakeDamage(20);
-            hasAttacked = true;
-            // Destroy(gameObject);
-            Debug.Log("Sailfish menyerang sekali-Keluar Layar!");
-
-            if (fishController != null)
-            {
-                fishController.enabled = true;
-                float velocityX = fishController.isFishL ? -Mathf.Abs(fishController.speed) : Mathf.Abs(fishController.speed);
-                rb.velocity = new Vector2(velocityX, 0f);
-            }
-
-            StartCoroutine(CheckOutOfScreen());
-        }
-        else
-        {
-            Debug.LogWarning("PlayerController tidak ditemukan di Player!");
-        }
-
-        if (animator != null)
-            animator.SetTrigger("Attack");
-    }
-    
-    IEnumerator CheckOutOfScreen()
-    {
-        while (true)
-        {
-            if (mainCam == null) yield break;
-            Vector3 viewPos = mainCam.WorldToViewportPoint(transform.position);
-            if (viewPos.x < -0.2f || viewPos.x > 1.2f || viewPos.y < -0.2f || viewPos.y > 1.2f)
-            {
-                Debug.Log("Sailfish sudah keluar layar, dihancurkan!");
-                Destroy(gameObject);
-                yield break;
-            }
-
-            yield return null;
-        }
-    }
-
-    // void OnDestroy()
-    // {
-    //     SpawnObject.dangerFishCount--;
-    // }
 }
 
 //tambahkan animasinya

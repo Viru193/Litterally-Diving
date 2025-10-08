@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 4942974266699959123}
   - component: {fileID: 4273264325543373286}
   - component: {fileID: 7530093196083223373}
+  - component: {fileID: 1973797382346770519}
   m_Layer: 0
   m_Name: Squid
   m_TagString: Fish
@@ -220,4 +221,28 @@ MonoBehaviour:
   isFishL: 1
   isFishR: 0
   isShark: 0
-  isDangerFish: 0
+  isDangerFish: 1
+--- !u!114 &1973797382346770519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021028686609786108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30e3a427bc0bfd4bb2f30a51e8d3cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishType: 3
+  balloonTag: Balloon
+  popTriggerName: Pop
+  damageToPlayer: 0
+  attackTrigger: 
+  moveSpeed: 0
+  detectRange: 0
+  inflateDelay: 0
+  inflateTrigger: 
+  inkRange: 1
+  inkEffectPrefab: {fileID: 4265285228427290553, guid: 256e6cb983cbb5441a4a5411bd5588b9, type: 3}
+  inkDuration: 5

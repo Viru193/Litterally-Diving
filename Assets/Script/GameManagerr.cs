@@ -29,12 +29,23 @@ public class GameManagerr : MonoBehaviour
     public Slider oxygenSlider;
     public float currentOxygen;
 
-    // Peingatan Oksigen Berkurang
+    // Peringatan Oksigen Berkurang
     public Image oFillImage;
     public Color normalColor = Color.blue;
     public Color warningColor = Color.red;
     public float flashSpeed = 4f;
     public float warningThreshold = 20f;
+
+    //Warning
+    public GameObject OxygenWarningPanel;
+    public float oxygenWarningDuration = 2f;
+    private bool isOxygenWarningActive;
+    private Coroutine oxygenWarningCoroutine;
+
+    //Radar
+    public GameObject FishWarningPanel;
+    public float warningDuration = 3f;
+    public Coroutine warningCoroutine;
 
     private bool isFlashing;
 
@@ -113,15 +124,20 @@ public class GameManagerr : MonoBehaviour
             }
         }
 
-        if (currentOxygen <= warningThreshold) 
+        if (currentOxygen <= warningThreshold)
         {
             if (isFlashing)
-                isFlashing =true;
-        
-            if (oFillImage != null) 
+                isFlashing = true;
+
+            if (oFillImage != null)
             {
                 float t = Mathf.PingPong(Time.time * flashSpeed, 1f);
                 oFillImage.color = Color.Lerp(normalColor, warningColor, t);
+            }
+
+            if (!isOxygenWarningActive && currentOxygen > 0)
+            {
+                ShowOxygenWarning(true);
             }
         }
         else
@@ -129,7 +145,7 @@ public class GameManagerr : MonoBehaviour
             if (isFlashing)
             {
                 isFlashing = false;
-            
+
                 if (oFillImage != null)
                     oFillImage.color = normalColor;
             }
@@ -174,7 +190,58 @@ public class GameManagerr : MonoBehaviour
         if (oxygenSlider != null)
             oxygenSlider.value = currentOxygen;
     }
+
+    public void ShowOxygenWarning(bool state)
+    {
+        if (OxygenWarningPanel == null) return;
+
+        if (state)
+        {
+            OxygenWarningPanel.SetActive(true);
+            isOxygenWarningActive = true;
+
+            if (oxygenWarningCoroutine != null)
+                StopCoroutine(oxygenWarningCoroutine);
+            oxygenWarningCoroutine = StartCoroutine(HideOxygenWarningAfterDelay());
+        }
+        else
+        {
+            OxygenWarningPanel.SetActive(false);
+            isOxygenWarningActive = false;
+        }
+    }
+
+    private IEnumerator HideOxygenWarningAfterDelay()
+    {
+        yield return new WaitForSeconds(oxygenWarningDuration);
+        if (OxygenWarningPanel != null)
+            OxygenWarningPanel.SetActive(false);
+        isOxygenWarningActive = false;
+    }
     // Akhir Script Oksigen
+
+    //Radar
+    public void ShowFishWarning(bool state)
+    {
+        if (FishWarningPanel == null) return;
+        if (state)
+        {
+            FishWarningPanel.SetActive(true);
+            if (warningCoroutine != null)
+                StopCoroutine(warningCoroutine);
+            warningCoroutine = StartCoroutine(HideFishWarningAfterDelay());
+        }
+        else
+        {
+            FishWarningPanel.SetActive(false);
+        }
+    }
+
+    private IEnumerator HideFishWarningAfterDelay()
+    {
+        yield return new WaitForSeconds(warningDuration);
+        FishWarningPanel.SetActive(false);
+    }
 
     public void PauseGame()
     {

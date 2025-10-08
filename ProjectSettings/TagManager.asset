@@ -10,6 +10,10 @@ TagManager:
   - Whale
   - Trash
   - Balloon
+  - Wall
+  - Canvas
+  - WallL
+  - WallR
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,10 @@ public class FishController : MonoBehaviour
 
     private GameObject theTrash;
 
+    private bool isCaptured = false;
+    private float warningTimer = 0f;
+    private float warningDuration = 3f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,14 +53,48 @@ public class FishController : MonoBehaviour
         else if (delayTimer <= 0)
         {
             delayTimer = Random.Range(3f, 7f);
-            currentSpeed = Random.Range(originalSpeed/2f, originalSpeed*1.5f);
+            currentSpeed = Random.Range(originalSpeed / 2f, originalSpeed * 1.5f);
         }
 
-        rb.velocity = new Vector2(currentSpeed, 0);
+        rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
+
+        if (rb.velocity.y > 1f && !isDangerFish)
+        {
+            if (!isCaptured)
+            {
+                isCaptured = true;
+                warningTimer = warningDuration;
+
+                GameManagerr gm = FindObjectOfType<GameManagerr>();
+                if (gm != null && gm.loseFishUI != null)
+                {
+                    gm.loseFishUI.SetActive(true);
+                    Debug.Log($"{gameObject.name} tertarik ke atas! Warning muncul.");
+                }
+            }
+        }
+        else
+        {
+            if (isCaptured)
+            {
+                warningTimer -= Time.deltaTime;
+                if (warningTimer <= 0)
+                {
+                    GameManagerr gm = FindObjectOfType<GameManagerr>();
+                    if (gm != null && gm.loseFishUI != null)
+                        gm.loseFishUI.SetActive(false);
+                }
+                isCaptured = false;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Balloon") || other.CompareTag("Trash"))
+        {
+            GameManagerr.Instance.ShowFishWarning(true);
+        }
         if (other.CompareTag("Destroyer"))
         {
             if (isWhale)

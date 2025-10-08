@@ -16,6 +16,9 @@ public class PlayerRadar : MonoBehaviour
     public string dangerTag = "Fish";
     public RectTransform iconParent;
     public GameObject dangerIconPrefab;
+    public GameObject warningPanel;
+    public float warningDisplayTime = 3f;
+    public float warningTimer = 0f;
 
     private List<GameObject> spawnedIcons = new List<GameObject>();
 
@@ -88,12 +91,47 @@ public class PlayerRadar : MonoBehaviour
         CanvasGroup cg = icon.GetComponent<CanvasGroup>();
         if (cg == null) cg = icon.AddComponent<CanvasGroup>();
 
-        float speed = 4f; // kecepatan kedip
+        float speed = 4f;
         while (icon != null)
         {
             float alpha = (Mathf.Sin(Time.time * speed) + 1f) / 2f; // 0-1 oscillate
             cg.alpha = alpha;
             yield return null;
+        }
+    }
+
+    void CheckFishCaptured()
+    {
+        bool capturedFishFound = false;
+        GameObject[] fishes = GameObject.FindGameObjectsWithTag("Fish");
+
+        foreach (GameObject fish in fishes)
+        {
+            if (fish.GetComponent<DangerFish>() != null)
+                continue;
+
+            Rigidbody2D rb = fish.GetComponent<Rigidbody2D>();
+            if (rb != null && rb.velocity.y > 1f)
+            {
+                capturedFishFound = true;
+                warningTimer = warningDisplayTime;
+                break;
+            }
+        }
+
+        if (capturedFishFound)
+        {
+            if (warningPanel != null)
+                warningPanel.SetActive(true);
+        }
+        else
+        {
+            if (warningTimer > 0)
+            {
+                warningTimer -= Time.deltaTime;
+                if (warningTimer <= 0 && warningPanel != null)
+                    warningPanel.SetActive(false);
+            }
         }
     }
 }

@@ -5388,7 +5388,7 @@ GameObject:
   - component: {fileID: 6168176388498731477}
   m_Layer: 0
   m_Name: SailFish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5402,8 +5402,8 @@ Transform:
   m_GameObject: {fileID: 7827613757186395319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.5, y: -0.33031, z: 0}
-  m_LocalScale: {x: 1.46875, y: 1.8375001, z: 1}
+  m_LocalPosition: {x: -7.53, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7805899247124758980}
@@ -5429,7 +5429,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5475,12 +5475,14 @@ MonoBehaviour:
   balloonTag: Player
   popTriggerName: Pop
   damageToPlayer: 100
-  attackCooldown: 1.5
-  chaseRange: 5
-  moveSpeed: 3
+  attackTrigger: Attack
+  moveSpeed: 5
   detectRange: 0
   inflateDelay: 0
   inflateTrigger: 
+  inkRange: 0
+  inkEffectPrefab: {fileID: 0}
+  inkDuration: 0
 --- !u!95 &6168176388498731477
 Animator:
   serializedVersion: 5

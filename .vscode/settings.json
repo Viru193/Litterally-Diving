@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Diving Game-Main.sln"
+    "dotnet.defaultSolution": "Litterally-Diving-main.sln"
 }
