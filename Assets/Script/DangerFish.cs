@@ -21,7 +21,7 @@ public class DangerFish : MonoBehaviour
     public string attackTrigger = "Attack";
     // public float attackCooldown = 1.5f;
     // public float chaseRange = 5f;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 100f;
 
     [Header("Alif Mengembang")]
     public float detectRange = 2f;
