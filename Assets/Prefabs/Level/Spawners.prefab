@@ -55,7 +55,6 @@ MonoBehaviour:
   - {fileID: 4021028686609786108, guid: c863e6c22ea10ef40ac332df32d09feb, type: 3}
   - {fileID: 8923414081454782458, guid: ba7b34fde3b84134a926b26b79e08817, type: 3}
   timer: 5
-  dangerFishMax: 5
   maxSpawnPos: {x: 0, y: 1}
   minSpawnPos: {x: 0, y: 1}
   sampahMode: 0
@@ -142,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 2355252202709174186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 1.25, z: 0}
+  m_LocalPosition: {x: -15, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -163,7 +162,6 @@ MonoBehaviour:
   objectPrefab:
   - {fileID: 1797626097625444588, guid: 6d71cbc2b03f66743a2d6fd5bb32a98b, type: 3}
   timer: 5
-  dangerFishMax: 5
   maxSpawnPos: {x: 0, y: 0}
   minSpawnPos: {x: 0, y: 0}
   sampahMode: 0
@@ -185,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa59881b24105734e82c26a3366a222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionalScoreSpawner: 100
+  conditionalScoreSpawner: 300
 --- !u!1 &2693214600586095234
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,9 +239,8 @@ MonoBehaviour:
   - {fileID: 2616069523351116863, guid: ea6e5a7811b8f054d9a15931406da779, type: 3}
   - {fileID: 2616069523351116863, guid: 9c91cff3e7ec64442b30039b45a2ecaf, type: 3}
   timer: 1
-  dangerFishMax: 5
-  maxSpawnPos: {x: 8, y: 0}
-  minSpawnPos: {x: 8, y: 0}
+  maxSpawnPos: {x: 7, y: 0}
+  minSpawnPos: {x: 7, y: 0}
   sampahMode: 1
   fishModeL: 0
   fishModeR: 0
@@ -319,7 +316,6 @@ MonoBehaviour:
   - {fileID: 4021028686609786108, guid: c863e6c22ea10ef40ac332df32d09feb, type: 3}
   - {fileID: 8923414081454782458, guid: ba7b34fde3b84134a926b26b79e08817, type: 3}
   timer: 5
-  dangerFishMax: 5
   maxSpawnPos: {x: 0, y: 1}
   minSpawnPos: {x: 0, y: 1}
   sampahMode: 0
@@ -382,7 +378,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6904671331321115425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb4445f1c8951a844ba4da8844fbc6c1, type: 3}
   m_Name: 
@@ -392,7 +388,6 @@ MonoBehaviour:
   - {fileID: 2779376786685593472, guid: 864dcd2e41aeff54ba946351a183d20a, type: 3}
   - {fileID: 4021028686609786108, guid: 88aa757147b95c14a89ad723e5306ce1, type: 3}
   timer: 5
-  dangerFishMax: 5
   maxSpawnPos: {x: 0, y: 1}
   minSpawnPos: {x: 0, y: 1}
   sampahMode: 0
@@ -414,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa59881b24105734e82c26a3366a222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionalScoreSpawner: 30
+  conditionalScoreSpawner: 100
 --- !u!1 &8579522503159745344
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,9 +458,8 @@ MonoBehaviour:
   objectPrefab:
   - {fileID: 8505742483553884762, guid: 587b49843664275469badf8d5a401e62, type: 3}
   timer: 10
-  dangerFishMax: 5
-  maxSpawnPos: {x: 8, y: 0}
-  minSpawnPos: {x: 8, y: 0}
+  maxSpawnPos: {x: 7, y: 0}
+  minSpawnPos: {x: 7, y: 0}
   sampahMode: 0
   fishModeL: 0
   fishModeR: 0
@@ -485,4 +479,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa59881b24105734e82c26a3366a222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionalScoreSpawner: 0
+  conditionalScoreSpawner: 10

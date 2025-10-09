@@ -28,10 +28,13 @@ public class FishController : MonoBehaviour
         delayTimer = 2;
         originalSpeed = speed;
 
-        if (isFishL && transform.position.x > 0)
+        if (transform.position.x > 0)
         {
-            isFishL = false;
-            isFishR = true;
+            if (isFishL)
+            {
+                isFishL = false;
+                isFishR = true;
+            }
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
 
@@ -108,6 +111,10 @@ public class FishController : MonoBehaviour
             else if (isFishR)
             {
                 GameManagerr.Instance.fishCountR--;
+            }
+            else if (isDangerFish)
+            {
+                GameManagerr.Instance.dangerFishCount--;
             }
 
             Destroy(gameObject);

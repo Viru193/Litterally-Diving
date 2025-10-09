@@ -7957,6 +7957,8 @@ MonoBehaviour:
   fishCountL: 0
   fishCountR: 0
   fishMax: 3
+  dangerFishCount: 0
+  dangerFishMax: 5
   tankCount: 0
   tankMax: 3
   maxOksigen: 100

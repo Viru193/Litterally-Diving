@@ -8,8 +8,6 @@ public class SpawnObject : MonoBehaviour
     //public Transform player;
     //public float spawnRadius;
     public float timer = 3;
-    public static int dangerFishCount = 0;
-    public int dangerFishMax = 5;
 
     public Vector2 maxSpawnPos, minSpawnPos;
     public bool sampahMode, fishModeL, fishModeR, whaleMode, sharkMode, oxygenMode, dangerFishMode;
@@ -116,10 +114,10 @@ public class SpawnObject : MonoBehaviour
     {
         while (true)
         {
-            if (dangerFishCount < dangerFishMax)
+            if (GameManagerr.Instance.dangerFishCount < GameManagerr.Instance.dangerFishMax)
             {
                 SpawningObject();
-                dangerFishCount++;
+                GameManagerr.Instance.dangerFishCount++;
             }
             yield return new WaitForSeconds(Random.Range(timer, timer + 2));
         }

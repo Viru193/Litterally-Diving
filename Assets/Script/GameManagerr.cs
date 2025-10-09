@@ -13,14 +13,21 @@ public class GameManagerr : MonoBehaviour
     public GameObject cameraObj;
     public AudioSource[] soundEffects;
 
+    [HideInInspector]
     public int sampahCount;
     public int sampahMax;
     private int sampahMax2;
+    [HideInInspector]
     public int whaleCount;
     public int whaleMax;
+    [HideInInspector]
     public int fishCountL, fishCountR;
     public int fishMax;
     private int fishMax2;
+    [HideInInspector]
+    public int dangerFishCount;
+    public int dangerFishMax;
+    [HideInInspector]
     public int tankCount;
     public int tankMax;
 
@@ -90,6 +97,10 @@ public class GameManagerr : MonoBehaviour
         if (fishCountR < 0)
         {
             fishCountR = 0;
+        }
+        if (dangerFishCount < 0)
+        {
+            dangerFishCount = 0;
         }
         if (tankCount < 0)
         {
