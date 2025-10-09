@@ -5476,7 +5476,7 @@ MonoBehaviour:
   popTriggerName: Pop
   damageToPlayer: 100
   attackTrigger: Attack
-  moveSpeed: 5
+  moveSpeed: 50
   detectRange: 0
   inflateDelay: 0
   inflateTrigger: 
