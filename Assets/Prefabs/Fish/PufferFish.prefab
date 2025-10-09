@@ -186,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   isWhale: 0
-  isFishL: 1
-  isFishR: 1
+  isFishL: 0
+  isFishR: 0
   isShark: 0
   isDangerFish: 1
 --- !u!114 &7013315948951455003
@@ -204,13 +204,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishType: 2
   balloonTag: Balloon
-  popEffect: {fileID: 0}
-  popSound: {fileID: 0}
   popTriggerName: Pop
   damageToPlayer: 0
-  attackCooldown: 0
-  chaseRange: 0
+  attackTrigger: Attack
   moveSpeed: 0
   detectRange: 0.5
   inflateDelay: 0.5
   inflateTrigger: Inflate
+  inkRange: 3
+  inkEffectPrefab: {fileID: 0}
+  inkDuration: 3

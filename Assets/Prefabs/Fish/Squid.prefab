@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   isWhale: 0
-  isFishL: 1
+  isFishL: 0
   isFishR: 0
   isShark: 0
   isDangerFish: 1

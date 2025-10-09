@@ -70,6 +70,10 @@ public class TrashPoint : MonoBehaviour
                 balloonMode = false;
                 GameManagerr.Instance.SoundPlay(0);
                 Destroy(theBalloon);
+                if (draggedFish)
+                {
+                    draggedFish.GetComponent<FishController>().enabled = true;
+                }
             }
 
             if (other.CompareTag("Fish"))

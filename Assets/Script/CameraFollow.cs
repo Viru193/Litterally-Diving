@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     public GameObject player;
     public Vector3 offset;
     public float minPos, maxPos;
-    public Transform farBackground, middleBackground, middleBackground2;
+    public Transform staticBackground, farBackground, middleBackground, middleBackground2;
 
     private Vector2 lastPos;
 
@@ -20,6 +20,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector2 amountToMove = new Vector2(transform.position.x - lastPos.x, transform.position.y - lastPos.y);
 
+        staticBackground.position = new Vector2(transform.position.x, transform.position.y);
         farBackground.position += new Vector3(amountToMove.x * .8f, amountToMove.y, 0f);
         middleBackground.position += new Vector3(amountToMove.x * .65f, amountToMove.y, 0f);
         middleBackground2.position += new Vector3(amountToMove.x * .4f, amountToMove.y, 0f);

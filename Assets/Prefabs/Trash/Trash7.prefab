@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: 7699569953740593351, guid: c3c794c9fe5e84147a6aa016b9762e9a, type: 3}
-  pointValue: 10
+  pointValue: 40
   balloonMode: 0
   theBalloon: {fileID: 0}
   draggedFish: {fileID: 0}
