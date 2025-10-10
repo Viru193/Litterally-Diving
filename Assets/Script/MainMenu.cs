@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         highScorePanel.text = PlayerPrefs.GetInt("HighScore").ToString();
         Debug.Log(PlayerPrefs.GetInt("HighScore"));
     }

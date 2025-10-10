@@ -10,7 +10,7 @@ public class SpawnObject : MonoBehaviour
     public float timer = 3;
 
     public Vector2 maxSpawnPos, minSpawnPos;
-    public bool sampahMode, fishModeL, fishModeR, whaleMode, sharkMode, oxygenMode, dangerFishMode;
+    public bool sampahMode, fishModeL, fishModeR, whaleMode, sharkMode, oxygenMode, pufferMode, dangerFishMode;
 
     private Camera mainCamera;
 
@@ -37,6 +37,10 @@ public class SpawnObject : MonoBehaviour
         if (oxygenMode)
         {
             StartCoroutine(SpawningOxygen());
+        }
+        if (pufferMode)
+        {
+            StartCoroutine(SpawningPufferfish());
         }
 
         if (dangerFishMode)
@@ -107,6 +111,19 @@ public class SpawnObject : MonoBehaviour
                 GameManagerr.Instance.tankCount++;
             }
             yield return new WaitForSeconds(Random.Range(timer, (timer + 2)));
+        }
+    }
+
+    IEnumerator SpawningPufferfish()
+    {
+        while (true)
+        {
+            if (GameManagerr.Instance.pufferfishCount < GameManagerr.Instance.pufferfishMax)
+            {
+                SpawningObject();
+                GameManagerr.Instance.pufferfishCount++;
+            }
+            yield return new WaitForSeconds(Random.Range(timer, timer + 2));
         }
     }
 

@@ -9,7 +9,7 @@ public class GameManagerr : MonoBehaviour
     public static GameManagerr Instance;
     public int currentScore;
     public Text scoreText;
-    public GameObject loseFishUI, loseOxygenUI;
+    public GameObject loseFishUI, loseOxygenUI, loseSailfishUI;
     public GameObject cameraObj;
     public AudioSource[] soundEffects;
 
@@ -25,6 +25,9 @@ public class GameManagerr : MonoBehaviour
     public int fishMax;
     private int fishMax2;
     [HideInInspector]
+    public int pufferfishCount;
+    public int pufferfishMax;
+    [HideInInspector]
     public int dangerFishCount;
     public int dangerFishMax;
     [HideInInspector]
@@ -38,7 +41,7 @@ public class GameManagerr : MonoBehaviour
 
     // Peringatan Oksigen Berkurang
     public Image oFillImage;
-    public Color normalColor = Color.blue;
+    public Color normalColor;
     public Color warningColor = Color.red;
     public float flashSpeed = 4f;
     public float warningThreshold = 20f;
@@ -194,6 +197,7 @@ public class GameManagerr : MonoBehaviour
     // Script Oksigen
     public void AddOksigen(int amount)
     {
+        oFillImage.color = normalColor;
         currentOxygen += amount;
 
         currentOxygen = Mathf.Clamp(currentOxygen, 0, maxOksigen);
@@ -208,6 +212,7 @@ public class GameManagerr : MonoBehaviour
 
         if (state)
         {
+            SoundPlay(7);
             OxygenWarningPanel.SetActive(true);
             isOxygenWarningActive = true;
 
@@ -282,10 +287,16 @@ public class GameManagerr : MonoBehaviour
         loseOxygenUI.SetActive(true);
     }
 
+    public void LoseSailfish()
+    {
+        SoundPlay(3);
+        Time.timeScale = 0f;
+        loseSailfishUI.SetActive(true);
+    }
+
     public void ToMainMenu()
     {
         SaveHighScore(currentScore);
-        Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
     }
 }

@@ -63,6 +63,7 @@ MonoBehaviour:
   whaleMode: 0
   sharkMode: 0
   oxygenMode: 0
+  pufferMode: 0
   dangerFishMode: 0
 --- !u!114 &3584270917470119930
 MonoBehaviour:
@@ -77,6 +78,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalScoreSpawner: 30
+--- !u!1 &2029820327202093318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6742976877773339810}
+  - component: {fileID: 6827743502651433245}
+  - component: {fileID: 3366580560885381495}
+  m_Layer: 0
+  m_Name: SpawnerPuffer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6742976877773339810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029820327202093318}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.5, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6361533287172832854}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6827743502651433245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029820327202093318}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4445f1c8951a844ba4da8844fbc6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2779376786685593472, guid: 864dcd2e41aeff54ba946351a183d20a, type: 3}
+  timer: 5
+  maxSpawnPos: {x: 0, y: 1}
+  minSpawnPos: {x: 0, y: 1}
+  sampahMode: 0
+  fishModeL: 0
+  fishModeR: 0
+  whaleMode: 0
+  sharkMode: 0
+  oxygenMode: 0
+  pufferMode: 1
+  dangerFishMode: 0
+--- !u!114 &3366580560885381495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029820327202093318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa59881b24105734e82c26a3366a222b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalScoreSpawner: 100
 --- !u!1 &2218978959872603362
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +184,9 @@ Transform:
   - {fileID: 1958550280562774420}
   - {fileID: 8770367073406229657}
   - {fileID: 6190169339467736913}
+  - {fileID: 8550020797144803266}
+  - {fileID: 6742976877773339810}
+  - {fileID: 1736373211820265737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2355252202709174186
@@ -170,6 +245,7 @@ MonoBehaviour:
   whaleMode: 1
   sharkMode: 0
   oxygenMode: 0
+  pufferMode: 0
   dangerFishMode: 0
 --- !u!114 &2899239658155701220
 MonoBehaviour:
@@ -247,6 +323,7 @@ MonoBehaviour:
   whaleMode: 0
   sharkMode: 0
   oxygenMode: 0
+  pufferMode: 0
   dangerFishMode: 0
 --- !u!114 &4213104379756454038
 MonoBehaviour:
@@ -261,6 +338,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalScoreSpawner: 10
+--- !u!1 &3566099115768321723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736373211820265737}
+  - component: {fileID: 5983466534500650632}
+  - component: {fileID: 6642459572609685020}
+  m_Layer: 0
+  m_Name: SpawnerPuffer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736373211820265737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566099115768321723}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.5, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6361533287172832854}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5983466534500650632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566099115768321723}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4445f1c8951a844ba4da8844fbc6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 2779376786685593472, guid: 864dcd2e41aeff54ba946351a183d20a, type: 3}
+  timer: 5
+  maxSpawnPos: {x: 0, y: 1}
+  minSpawnPos: {x: 0, y: 1}
+  sampahMode: 0
+  fishModeL: 0
+  fishModeR: 0
+  whaleMode: 0
+  sharkMode: 0
+  oxygenMode: 0
+  pufferMode: 1
+  dangerFishMode: 0
+--- !u!114 &6642459572609685020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566099115768321723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa59881b24105734e82c26a3366a222b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalScoreSpawner: 100
 --- !u!1 &3932548886365377796
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +472,7 @@ MonoBehaviour:
   whaleMode: 0
   sharkMode: 0
   oxygenMode: 0
+  pufferMode: 0
   dangerFishMode: 0
 --- !u!114 &6833424774789109803
 MonoBehaviour:
@@ -338,6 +487,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalScoreSpawner: 30
+--- !u!1 &4824030732387110737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8550020797144803266}
+  - component: {fileID: 2707840267049834308}
+  - component: {fileID: 169627945897377417}
+  m_Layer: 0
+  m_Name: SpawnerDangeFish2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8550020797144803266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824030732387110737}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.5, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6361533287172832854}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2707840267049834308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824030732387110737}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4445f1c8951a844ba4da8844fbc6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 7827613757186395319, guid: 156fc96b83c70874c92dff3c3b46ca3b, type: 3}
+  - {fileID: 4021028686609786108, guid: 88aa757147b95c14a89ad723e5306ce1, type: 3}
+  timer: 5
+  maxSpawnPos: {x: 0, y: 1}
+  minSpawnPos: {x: 0, y: 1}
+  sampahMode: 0
+  fishModeL: 0
+  fishModeR: 0
+  whaleMode: 0
+  sharkMode: 0
+  oxygenMode: 0
+  pufferMode: 0
+  dangerFishMode: 1
+--- !u!114 &169627945897377417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824030732387110737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa59881b24105734e82c26a3366a222b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalScoreSpawner: 100
 --- !u!1 &6904671331321115425
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +606,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab:
   - {fileID: 7827613757186395319, guid: 156fc96b83c70874c92dff3c3b46ca3b, type: 3}
-  - {fileID: 2779376786685593472, guid: 864dcd2e41aeff54ba946351a183d20a, type: 3}
   - {fileID: 4021028686609786108, guid: 88aa757147b95c14a89ad723e5306ce1, type: 3}
   timer: 5
   maxSpawnPos: {x: 0, y: 1}
@@ -396,6 +616,7 @@ MonoBehaviour:
   whaleMode: 0
   sharkMode: 0
   oxygenMode: 0
+  pufferMode: 0
   dangerFishMode: 1
 --- !u!114 &8073278861544454822
 MonoBehaviour:
@@ -450,7 +671,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8579522503159745344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb4445f1c8951a844ba4da8844fbc6c1, type: 3}
   m_Name: 
@@ -466,6 +687,7 @@ MonoBehaviour:
   whaleMode: 0
   sharkMode: 0
   oxygenMode: 1
+  pufferMode: 0
   dangerFishMode: 0
 --- !u!114 &2672687382898824940
 MonoBehaviour:

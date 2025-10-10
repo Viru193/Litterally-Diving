@@ -20,7 +20,14 @@ public class InkEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Time.timeScale == 0)
+        {
+            GetComponent<Image>().enabled = false;
+        }
+        else
+        {
+            GetComponent<Image>().enabled = true;
+        }
     }
     
     void Awake()
@@ -38,6 +45,7 @@ public class InkEffect : MonoBehaviour
 
     IEnumerator InkRoutine()
     {
+        GameManagerr.Instance.SoundPlay(8);
         // Fade in
         while (inkImage.color.a < 0.8f)
         {

@@ -11,6 +11,7 @@ public class FishController : MonoBehaviour
     public bool isWhale;
     public bool isFishL, isFishR;
     public bool isShark;
+    public bool isPufferfish;
     public bool isDangerFish;
 
     private float delayTimer;
@@ -111,6 +112,10 @@ public class FishController : MonoBehaviour
             else if (isFishR)
             {
                 GameManagerr.Instance.fishCountR--;
+            }
+            else if (isPufferfish)
+            {
+                GameManagerr.Instance.pufferfishCount--;
             }
             else if (isDangerFish)
             {

@@ -119,7 +119,7 @@ public class DangerFish : MonoBehaviour
             // panggil game over 
             GameManagerr gm = FindObjectOfType<GameManagerr>();
             if (gm != null)
-                gm.LoseFish();
+                gm.LoseSailfish();
             Debug.Log("Sailfish menyerang player → Game Over!");
         }
     }
@@ -155,7 +155,7 @@ public class DangerFish : MonoBehaviour
 
     IEnumerator SprayInk()
     {
-        GameObject canvas = GameObject.Find("Canvas");
+        GameObject canvas = GameObject.Find("UI");
         if (canvas != null && inkEffectPrefab != null)
         {
             GameObject ink = Instantiate(inkEffectPrefab, canvas.transform);
