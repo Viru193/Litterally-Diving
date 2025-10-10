@@ -47,6 +47,10 @@ public class TrashPoint : MonoBehaviour
                             fish.transform.parent = null;
                         }
                     }
+                    draggedFish.Clear();
+                    GameManagerr gm = FindObjectOfType<GameManagerr>();
+                    if (gm != null && gm.FishWarningPanel != null)
+                        gm.FishWarningPanel.SetActive(false);
                 }
             }
         }
@@ -64,10 +68,17 @@ public class TrashPoint : MonoBehaviour
         {
             if (other.CompareTag("ScoreTrigger"))
             {
-                GameManagerr.Instance.SoundPlay(6);
-                GameManagerr.Instance.AddScore(pointValue);
-                GameManagerr.Instance.sampahCount--;
-                Destroy(gameObject);
+                if (draggedFish.Count > 0)
+                {
+                    GameManagerr.Instance.LoseFish();
+                }
+                else 
+                {
+                    GameManagerr.Instance.SoundPlay(6);
+                    GameManagerr.Instance.AddScore(pointValue);
+                    GameManagerr.Instance.sampahCount--;
+                    Destroy(gameObject);
+                }
             }
 
             if (other.CompareTag("Whale"))
@@ -90,6 +101,11 @@ public class TrashPoint : MonoBehaviour
             {
                 GameManagerr.Instance.SoundPlay(5);
                 draggedFish.Add(other.gameObject);
+                GameManagerr gm = FindObjectOfType<GameManagerr>();
+                if (gm != null && gm.FishWarningPanel != null)
+                {
+                    gm.FishWarningPanel.SetActive(true);
+                }
                 other.GetComponent<FishController>().Captured(transform);
                 other.GetComponent<FishController>().enabled = false;
                 other.GetComponent<Rigidbody2D>().simulated = false;

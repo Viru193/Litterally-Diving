@@ -9,13 +9,13 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
-        pausePanel.SetActive(true);
+        GetComponent<Animator>().SetTrigger("pause");
         GameManagerr.Instance.PauseGame();
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);
+        GetComponent<Animator>().SetTrigger("resume");
         GameManagerr.Instance.ResumeGame();
     }
 

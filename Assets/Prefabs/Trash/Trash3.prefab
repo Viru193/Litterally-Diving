@@ -129,6 +129,8 @@ MonoBehaviour:
   balloonPrefab: {fileID: 7699569953740593351, guid: c3c794c9fe5e84147a6aa016b9762e9a, type: 3}
   pointValue: 25
   balloonMode: 0
+  theBalloon: {fileID: 0}
+  draggedFish: []
 --- !u!1 &5808558547010632923
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +214,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

@@ -33,9 +33,11 @@ public class InkEffect : MonoBehaviour
     void Awake()
     {
         inkImage = GetComponent<Image>();
+        /*
         Color c = inkImage.color;
         c.a = 0f;
         inkImage.color = c;
+        */
     }
 
     void OnEnable()
@@ -46,6 +48,7 @@ public class InkEffect : MonoBehaviour
     IEnumerator InkRoutine()
     {
         GameManagerr.Instance.SoundPlay(8);
+        /*
         // Fade in
         while (inkImage.color.a < 0.8f)
         {
@@ -54,6 +57,7 @@ public class InkEffect : MonoBehaviour
             inkImage.color = c;
             yield return null;
         }
+        */
 
         yield return new WaitForSeconds(displayTime);
 

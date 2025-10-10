@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector2 amountToMove = new Vector2(transform.position.x - lastPos.x, transform.position.y - lastPos.y);
 
-        staticBackground.position = new Vector2(transform.position.x, transform.position.y);
+        staticBackground.position = new Vector2(transform.position.x, transform.position.y - .5f);
         farBackground.position += new Vector3(amountToMove.x * .8f, amountToMove.y, 0f);
         middleBackground.position += new Vector3(amountToMove.x * .65f, amountToMove.y, 0f);
         middleBackground2.position += new Vector3(amountToMove.x * .4f, amountToMove.y, 0f);

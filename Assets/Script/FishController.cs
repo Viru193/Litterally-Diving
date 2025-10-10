@@ -16,8 +16,6 @@ public class FishController : MonoBehaviour
 
     private float delayTimer;
 
-    private GameObject theTrash;
-
     private bool isCaptured = false;
     private float warningTimer = 0f;
     private float warningDuration = 3f;
@@ -125,6 +123,7 @@ public class FishController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        /*
         if (other.CompareTag("ScoreTrigger"))
         {
             if (!isDangerFish)
@@ -132,6 +131,7 @@ public class FishController : MonoBehaviour
                 GameManagerr.Instance.LoseFish();
             }
         }
+        */
     }
 
     public void Captured(Transform sampah)
