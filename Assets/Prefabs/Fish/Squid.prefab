@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7973402150371845600}
   - component: {fileID: 1527706182045409273}
   - component: {fileID: 4553826371531533155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 4273264325543373286}
   - component: {fileID: 7530093196083223373}
   - component: {fileID: 1973797382346770519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Squid
   m_TagString: Fish
   m_Icon: {fileID: 0}

@@ -130,7 +130,7 @@ MonoBehaviour:
   pointValue: 10
   balloonMode: 0
   theBalloon: {fileID: 0}
-  draggedFish: {fileID: 0}
+  draggedFish: []
 --- !u!1 &7263808812503121409
 GameObject:
   m_ObjectHideFlags: 0

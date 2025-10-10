@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -67159910945517935}
   - component: {fileID: 4631114531061259247}
   - component: {fileID: -3820912627975440361}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Whale
   m_TagString: Whale
   m_Icon: {fileID: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   isFishL: 0
   isFishR: 0
   isShark: 0
+  isDangerFish: 0
 --- !u!114 &4631114531061259247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +226,7 @@ GameObject:
   - component: {fileID: 352141026341729603}
   - component: {fileID: 3602812215274493157}
   - component: {fileID: 1680796887908456153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5056,7 +5057,7 @@ GameObject:
   - component: {fileID: 1890816563819106593}
   - component: {fileID: 8307801216056454494}
   - component: {fileID: 1003402386511380578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9887,7 +9888,7 @@ GameObject:
   - component: {fileID: 7869935085208061423}
   - component: {fileID: 4426681243742866788}
   - component: {fileID: 6748816981412995965}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Body
   m_TagString: Whale
   m_Icon: {fileID: 0}
@@ -10006,7 +10007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7803136602148706015}
   - component: {fileID: 4197221324285990691}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Head
   m_TagString: Whale
   m_Icon: {fileID: 0}
@@ -10091,7 +10092,7 @@ GameObject:
   - component: {fileID: 3841043206947820982}
   - component: {fileID: 5834755819702668962}
   - component: {fileID: 7832005819204327802}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Tail
   m_TagString: Whale
   m_Icon: {fileID: 0}
@@ -10210,7 +10211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9017007742794232716}
   - component: {fileID: 4153619121203825354}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Fin
   m_TagString: Whale
   m_Icon: {fileID: 0}
@@ -10295,7 +10296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7666442761691028375}
   - component: {fileID: 1596926379946126901}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Tailfin
   m_TagString: Whale
   m_Icon: {fileID: 0}

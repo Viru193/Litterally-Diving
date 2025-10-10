@@ -128,4 +128,9 @@ public class FishController : MonoBehaviour
             }
         }
     }
+
+    public void Captured(Transform sampah)
+    {
+        transform.SetParent(sampah);
+    }
 }

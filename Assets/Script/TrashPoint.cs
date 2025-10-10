@@ -12,7 +12,7 @@ public class TrashPoint : MonoBehaviour
     public bool balloonMode;
     private bool isInside;
     public GameObject theBalloon; 
-    public GameObject draggedFish;
+    public List<GameObject> draggedFish;
 
     void Start()
     {
@@ -38,9 +38,14 @@ public class TrashPoint : MonoBehaviour
                     balloonMode = false;
                     GameManagerr.Instance.SoundPlay(0);
                     Destroy(theBalloon);
-                    if (draggedFish)
+                    foreach (GameObject fish in draggedFish)
                     {
-                        draggedFish.GetComponent<FishController>().enabled = true;
+                        if (fish.GetComponent<FishController>())
+                        {
+                            fish.GetComponent<Rigidbody2D>().simulated = true;
+                            fish.GetComponent<FishController>().enabled = true;
+                            fish.transform.parent = null;
+                        }
                     }
                 }
             }
@@ -70,18 +75,24 @@ public class TrashPoint : MonoBehaviour
                 balloonMode = false;
                 GameManagerr.Instance.SoundPlay(0);
                 Destroy(theBalloon);
-                if (draggedFish)
+                foreach (GameObject fish in draggedFish)
                 {
-                    draggedFish.GetComponent<FishController>().enabled = true;
+                    if (fish.GetComponent<FishController>())
+                    {
+                        fish.GetComponent<Rigidbody2D>().simulated = true;
+                        fish.GetComponent<FishController>().enabled = true;
+                        fish.transform.parent = null;
+                    }
                 }
             }
 
             if (other.CompareTag("Fish"))
             {
                 GameManagerr.Instance.SoundPlay(5);
-                draggedFish = other.gameObject;
+                draggedFish.Add(other.gameObject);
+                other.GetComponent<FishController>().Captured(transform);
                 other.GetComponent<FishController>().enabled = false;
-                other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, rb.velocity.y);
+                other.GetComponent<Rigidbody2D>().simulated = false;
             }
         }
 

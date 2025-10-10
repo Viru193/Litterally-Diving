@@ -233,4 +233,4 @@ MonoBehaviour:
   pointValue: 25
   balloonMode: 0
   theBalloon: {fileID: 0}
-  draggedFish: {fileID: 0}
+  draggedFish: []
