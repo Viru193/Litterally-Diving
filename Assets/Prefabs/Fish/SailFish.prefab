@@ -5010,7 +5010,7 @@ GameObject:
   - component: {fileID: 529162702435311250}
   - component: {fileID: 7982736381136428810}
   - component: {fileID: 424249410362318071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5458,6 +5458,7 @@ MonoBehaviour:
   isFishL: 0
   isFishR: 0
   isShark: 0
+  isPufferfish: 0
   isDangerFish: 1
 --- !u!114 &5047698209395159288
 MonoBehaviour:

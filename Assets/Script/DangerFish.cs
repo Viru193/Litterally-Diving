@@ -113,9 +113,11 @@ public class DangerFish : MonoBehaviour
             if (animator != null && !string.IsNullOrEmpty(attackTrigger))
                 animator.SetTrigger(attackTrigger);
             // bunuh player 
+            /*
             PlayerController pc = other.GetComponent<PlayerController>();
             if (pc != null)
                 pc.TakeDamage(damageToPlayer);
+            */
             // panggil game over 
             GameManagerr gm = FindObjectOfType<GameManagerr>();
             if (gm != null)
@@ -128,7 +130,6 @@ public class DangerFish : MonoBehaviour
     {
         if (player == null || hasInked || inkEffectPrefab == null) return;
         float dist = Vector2.Distance(transform.position, player.position);
-        Debug.Log("Cek jarak Squid ke Player: " + dist);
         if (dist <= inkRange)
         {
             hasInked = true;

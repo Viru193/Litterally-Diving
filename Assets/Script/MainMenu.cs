@@ -27,12 +27,14 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SoundPlay();
+        PlayerPrefs.Save();
         SceneManager.LoadScene(gameSceneName);
     }
 
     public void QuitGame()
     {
         SoundPlay();
+        PlayerPrefs.Save();
         Application.Quit();
     }
 

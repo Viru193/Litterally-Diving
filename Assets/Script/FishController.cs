@@ -16,9 +16,9 @@ public class FishController : MonoBehaviour
 
     private float delayTimer;
 
-    private bool isCaptured = false;
-    private float warningTimer = 0f;
-    private float warningDuration = 3f;
+    //private bool isCaptured = false;
+    //private float warningTimer = 0f;
+    //private float warningDuration = 3f;
 
     void Start()
     {
@@ -60,6 +60,7 @@ public class FishController : MonoBehaviour
 
         rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
 
+        /*
         if (rb.velocity.y > 1f && !isDangerFish)
         {
             if (!isCaptured)
@@ -89,14 +90,11 @@ public class FishController : MonoBehaviour
                 isCaptured = false;
             }
         }
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Balloon") || other.CompareTag("Trash"))
-        {
-            GameManagerr.Instance.ShowFishWarning(true);
-        }
         if (other.CompareTag("Destroyer"))
         {
             if (isWhale)

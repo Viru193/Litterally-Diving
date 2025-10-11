@@ -117,17 +117,17 @@ public class GameManagerr : MonoBehaviour
             fishMax = fishMax2;
         }
 
+        // Script (Update) Oksigen
         if (currentScore > 0)
         {
             currentOxygen -= Time.deltaTime * 3;
-
-            if (oxygenSlider != null)
-            {
-                oxygenSlider.value = (int)currentOxygen;
-            }
+        }
+        
+        if (oxygenSlider != null)
+        {
+            oxygenSlider.value = (int)currentOxygen;
         }
 
-        // Script (Update) Oksigen
         if (currentOxygen <= 0)
         {
             currentOxygen = 0;
