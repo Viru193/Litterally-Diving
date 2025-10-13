@@ -17,21 +17,38 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsPanel;
     public Text highScorePanel;
 
+    private bool isInMenu;
+
     void Start()
     {
+        Time.timeScale = 1f;
         highScorePanel.text = PlayerPrefs.GetInt("HighScore").ToString();
-        Debug.Log(PlayerPrefs.GetInt("HighScore"));
+        isInMenu = true;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (isInMenu)
+            {
+                QuitGame();
+            }
+            else Menu();
+        }
     }
 
     public void PlayGame()
     {
         SoundPlay();
+        PlayerPrefs.Save();
         SceneManager.LoadScene(gameSceneName);
     }
 
     public void QuitGame()
     {
         SoundPlay();
+        PlayerPrefs.Save();
         Application.Quit();
     }
 
@@ -40,6 +57,7 @@ public class MainMenu : MonoBehaviour
         SoundPlay();
         mainMenuPanel.SetActive(false);
         optionPanel.SetActive(true);
+        isInMenu = false;
     }
 
     public void Credits()
@@ -47,6 +65,7 @@ public class MainMenu : MonoBehaviour
         SoundPlay();
         mainMenuPanel.SetActive(false);
         creditsPanel.SetActive(true);
+        isInMenu = false;
     }
 
     public void Menu()

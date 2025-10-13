@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2432282212797718680}
   - component: {fileID: 5721265328331500577}
   - component: {fileID: 4648301463395084005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BubbleFeet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4846,7 +4846,7 @@ GameObject:
   - component: {fileID: 2496174823112525085}
   - component: {fileID: 7889003084787585338}
   - component: {fileID: 6148045395343028373}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Oxygen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5008,7 +5008,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

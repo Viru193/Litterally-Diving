@@ -5,18 +5,66 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public GameObject pausePanel;
+    public GameObject settingsPanel, creditPanel;
+
+    private bool isPaused, isSettings;
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else if (isSettings)
+            {
+                settingsPanel.SetActive(false);
+                creditPanel.SetActive(false);
+            }
+            else ResumeGame();
+        }
+    }
 
     public void PauseGame()
     {
-        pausePanel.SetActive(true);
+        GetComponent<Animator>().SetTrigger("pause");
+        isPaused = true;
         GameManagerr.Instance.PauseGame();
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);
+        GetComponent<Animator>().SetTrigger("resume");
+        isPaused = false;
         GameManagerr.Instance.ResumeGame();
+    }
+
+    public void SettingsButton()
+    {
+        GameManagerr.Instance.SoundPlay(2);
+        if (isSettings)
+        {
+            isSettings = false;
+            settingsPanel.SetActive(false);
+        }else
+        {
+            isSettings = true;
+            settingsPanel.SetActive(true);
+        }
+    }
+
+    public void CreditButton()
+    {
+        if (isSettings)
+        {
+            isSettings = false;
+            creditPanel.SetActive(false);
+        }else
+        {
+            isSettings = true;
+            creditPanel.SetActive(true);
+        }
     }
 
     public void MainMenu()

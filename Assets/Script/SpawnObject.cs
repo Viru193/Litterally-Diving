@@ -8,11 +8,9 @@ public class SpawnObject : MonoBehaviour
     //public Transform player;
     //public float spawnRadius;
     public float timer = 3;
-    public static int dangerFishCount = 0;
-    public int dangerFishMax = 5;
 
     public Vector2 maxSpawnPos, minSpawnPos;
-    public bool sampahMode, fishModeL, fishModeR, whaleMode, sharkMode, oxygenMode, dangerFishMode;
+    public bool sampahMode, fishModeL, fishModeR, whaleMode, modeAlif, oxygenMode, pufferMode, dangerFishMode;
 
     private Camera mainCamera;
 
@@ -32,6 +30,10 @@ public class SpawnObject : MonoBehaviour
         {
             StartCoroutine(SpawningFishR());
         }
+        if (modeAlif)
+        {
+            StartCoroutine(SpawningAlifPurba());
+        }
         if (whaleMode)
         {
             StartCoroutine(SpawningWhale());
@@ -39,6 +41,10 @@ public class SpawnObject : MonoBehaviour
         if (oxygenMode)
         {
             StartCoroutine(SpawningOxygen());
+        }
+        if (pufferMode)
+        {
+            StartCoroutine(SpawningPufferfish());
         }
 
         if (dangerFishMode)
@@ -86,6 +92,19 @@ public class SpawnObject : MonoBehaviour
         }
     }
 
+    IEnumerator SpawningAlifPurba()
+    {
+        while (true)
+        {
+            if (GameManagerr.Instance.alifCount < GameManagerr.Instance.alifMax)
+            {
+                SpawningObject();
+                GameManagerr.Instance.alifCount++;
+            }
+            yield return new WaitForSeconds(Random.Range(timer, (timer + 2)));
+        }
+    }
+
     IEnumerator SpawningWhale()
     {
         while (true)
@@ -112,14 +131,27 @@ public class SpawnObject : MonoBehaviour
         }
     }
 
+    IEnumerator SpawningPufferfish()
+    {
+        while (true)
+        {
+            if (GameManagerr.Instance.pufferfishCount < GameManagerr.Instance.pufferfishMax)
+            {
+                SpawningObject();
+                GameManagerr.Instance.pufferfishCount++;
+            }
+            yield return new WaitForSeconds(Random.Range(timer, timer + 2));
+        }
+    }
+
     IEnumerator SpawningDangerFish()
     {
         while (true)
         {
-            if (dangerFishCount < dangerFishMax)
+            if (GameManagerr.Instance.dangerFishCount < GameManagerr.Instance.dangerFishMax)
             {
                 SpawningObject();
-                dangerFishCount++;
+                GameManagerr.Instance.dangerFishCount++;
             }
             yield return new WaitForSeconds(Random.Range(timer, timer + 2));
         }

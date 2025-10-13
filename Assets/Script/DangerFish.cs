@@ -14,7 +14,6 @@ public class DangerFish : MonoBehaviour
     public string balloonTag = "Balloon";
     // public GameObject popEffect; // Efek partikel/ letusan balon
     // public AudioClip popSound; // suara balon
-    public string popTriggerName = "Pop";
 
     [Header("Serang Dimas")]
     public int damageToPlayer = 100;
@@ -113,13 +112,15 @@ public class DangerFish : MonoBehaviour
             if (animator != null && !string.IsNullOrEmpty(attackTrigger))
                 animator.SetTrigger(attackTrigger);
             // bunuh player 
+            /*
             PlayerController pc = other.GetComponent<PlayerController>();
             if (pc != null)
                 pc.TakeDamage(damageToPlayer);
+            */
             // panggil game over 
             GameManagerr gm = FindObjectOfType<GameManagerr>();
             if (gm != null)
-                gm.LoseFish();
+                gm.LoseSailfish();
             Debug.Log("Sailfish menyerang player → Game Over!");
         }
     }
@@ -128,7 +129,6 @@ public class DangerFish : MonoBehaviour
     {
         if (player == null || hasInked || inkEffectPrefab == null) return;
         float dist = Vector2.Distance(transform.position, player.position);
-        Debug.Log("Cek jarak Squid ke Player: " + dist);
         if (dist <= inkRange)
         {
             hasInked = true;
@@ -155,7 +155,7 @@ public class DangerFish : MonoBehaviour
 
     IEnumerator SprayInk()
     {
-        GameObject canvas = GameObject.Find("Canvas");
+        GameObject canvas = GameObject.Find("UI");
         if (canvas != null && inkEffectPrefab != null)
         {
             GameObject ink = Instantiate(inkEffectPrefab, canvas.transform);
@@ -181,16 +181,9 @@ public class DangerFish : MonoBehaviour
             {
                 tp.balloonMode = false;
                 Destroy(tp.theBalloon);
-
-                Rigidbody2D trashRb = tp.GetComponent<Rigidbody2D>();
-                if (trashRb != null)
-                    trashRb.velocity = Vector2.down * 2f;
-
-                tp.draggedFish = null;
-                tp.SendMessage("ReleaseFish", SendMessageOptions.DontRequireReceiver);
+                GameManagerr.Instance.SoundPlay(0);
+                tp.ReleaseFish();
             }
-
-            Debug.Log("PufferFish meletuskan balon + trash jatuh ke bawah!");
         }
 
         yield return new WaitForSeconds(1f);
@@ -245,11 +238,6 @@ public class DangerFish : MonoBehaviour
 
                 rb.velocity = new Vector2(velocityX, 0f);
             }
-        }
-
-        if (animator != null && !string.IsNullOrEmpty(popTriggerName))
-        {
-            animator.SetTrigger(popTriggerName);
         }
 
         // Efek partikel

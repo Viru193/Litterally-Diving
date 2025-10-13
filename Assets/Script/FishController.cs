@@ -11,15 +11,14 @@ public class FishController : MonoBehaviour
     public bool isWhale;
     public bool isFishL, isFishR;
     public bool isShark;
+    public bool isPufferfish;
     public bool isDangerFish;
 
     private float delayTimer;
 
-    private GameObject theTrash;
-
-    private bool isCaptured = false;
-    private float warningTimer = 0f;
-    private float warningDuration = 3f;
+    //private bool isCaptured = false;
+    //private float warningTimer = 0f;
+    //private float warningDuration = 3f;
 
     void Start()
     {
@@ -28,10 +27,13 @@ public class FishController : MonoBehaviour
         delayTimer = 2;
         originalSpeed = speed;
 
-        if (isFishL && transform.position.x > 0)
+        if (transform.position.x > 0)
         {
-            isFishL = false;
-            isFishR = true;
+            if (isFishL)
+            {
+                isFishL = false;
+                isFishR = true;
+            }
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
 
@@ -58,6 +60,7 @@ public class FishController : MonoBehaviour
 
         rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
 
+        /*
         if (rb.velocity.y > 1f && !isDangerFish)
         {
             if (!isCaptured)
@@ -87,14 +90,11 @@ public class FishController : MonoBehaviour
                 isCaptured = false;
             }
         }
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Balloon") || other.CompareTag("Trash"))
-        {
-            GameManagerr.Instance.ShowFishWarning(true);
-        }
         if (other.CompareTag("Destroyer"))
         {
             if (isWhale)
@@ -109,10 +109,19 @@ public class FishController : MonoBehaviour
             {
                 GameManagerr.Instance.fishCountR--;
             }
+            else if (isPufferfish)
+            {
+                GameManagerr.Instance.pufferfishCount--;
+            }
+            else if (isDangerFish)
+            {
+                GameManagerr.Instance.dangerFishCount--;
+            }
 
             Destroy(gameObject);
         }
 
+        /*
         if (other.CompareTag("ScoreTrigger"))
         {
             if (!isDangerFish)
@@ -120,5 +129,11 @@ public class FishController : MonoBehaviour
                 GameManagerr.Instance.LoseFish();
             }
         }
+        */
+    }
+
+    public void Captured(Transform sampah)
+    {
+        transform.SetParent(sampah);
     }
 }
