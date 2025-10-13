@@ -221,6 +221,7 @@ MonoBehaviour:
   isFishL: 0
   isFishR: 0
   isShark: 0
+  isPufferfish: 0
   isDangerFish: 1
 --- !u!114 &1973797382346770519
 MonoBehaviour:
@@ -243,6 +244,6 @@ MonoBehaviour:
   detectRange: 0
   inflateDelay: 0
   inflateTrigger: 
-  inkRange: 1
+  inkRange: 0.5
   inkEffectPrefab: {fileID: 4265285228427290553, guid: 256e6cb983cbb5441a4a5411bd5588b9, type: 3}
   inkDuration: 5

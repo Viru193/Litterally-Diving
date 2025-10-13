@@ -25,6 +25,9 @@ public class GameManagerr : MonoBehaviour
     public int fishMax;
     private int fishMax2;
     [HideInInspector]
+    public int alifCount;
+    public int alifMax;
+    [HideInInspector]
     public int pufferfishCount;
     public int pufferfishMax;
     [HideInInspector]
@@ -190,8 +193,11 @@ public class GameManagerr : MonoBehaviour
 
     public void SaveHighScore(int score)
     {
-        PlayerPrefs.SetInt("HighScore", currentScore);
-        PlayerPrefs.Save();
+        if (score > PlayerPrefs.GetInt("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", currentScore);
+            PlayerPrefs.Save();
+        }
     }
 
     // Script Oksigen

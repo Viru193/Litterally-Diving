@@ -38,16 +38,7 @@ public class TrashPoint : MonoBehaviour
                     balloonMode = false;
                     GameManagerr.Instance.SoundPlay(0);
                     Destroy(theBalloon);
-                    foreach (GameObject fish in draggedFish)
-                    {
-                        if (fish.GetComponent<FishController>())
-                        {
-                            fish.GetComponent<Rigidbody2D>().simulated = true;
-                            fish.GetComponent<FishController>().enabled = true;
-                            fish.transform.parent = null;
-                        }
-                    }
-                    draggedFish.Clear();
+                    ReleaseFish();
                     GameManagerr.Instance.ShowFishWarning(false);
                 }
             }
@@ -66,16 +57,16 @@ public class TrashPoint : MonoBehaviour
         {
             if (other.CompareTag("ScoreTrigger"))
             {
-                if (draggedFish.Count > 0)
-                {
-                    GameManagerr.Instance.LoseFish();
-                }
-                else 
+                if (draggedFish.Count == 0)
                 {
                     GameManagerr.Instance.SoundPlay(6);
                     GameManagerr.Instance.AddScore(pointValue);
                     GameManagerr.Instance.sampahCount--;
                     Destroy(gameObject);
+                }
+                else 
+                {
+                    GameManagerr.Instance.LoseFish();
                 }
             }
 
@@ -84,15 +75,7 @@ public class TrashPoint : MonoBehaviour
                 balloonMode = false;
                 GameManagerr.Instance.SoundPlay(0);
                 Destroy(theBalloon);
-                foreach (GameObject fish in draggedFish)
-                {
-                    if (fish.GetComponent<FishController>())
-                    {
-                        fish.GetComponent<Rigidbody2D>().simulated = true;
-                        fish.GetComponent<FishController>().enabled = true;
-                        fish.transform.parent = null;
-                    }
-                }
+                ReleaseFish();
             }
 
             if (other.CompareTag("Fish"))
@@ -120,5 +103,20 @@ public class TrashPoint : MonoBehaviour
             sr.color = Color.white;
             isInside = false;
         }
+    }
+
+    public void ReleaseFish()
+    {
+        foreach (GameObject fish in draggedFish)
+        {
+            if (fish.GetComponent<FishController>())
+            {
+                fish.GetComponent<Rigidbody2D>().simulated = true;
+                fish.GetComponent<FishController>().enabled = true;
+                fish.transform.parent = null;
+            }
+        }
+        
+        draggedFish.Clear();
     }
 }

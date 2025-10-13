@@ -14,7 +14,6 @@ public class DangerFish : MonoBehaviour
     public string balloonTag = "Balloon";
     // public GameObject popEffect; // Efek partikel/ letusan balon
     // public AudioClip popSound; // suara balon
-    public string popTriggerName = "Pop";
 
     [Header("Serang Dimas")]
     public int damageToPlayer = 100;
@@ -182,16 +181,9 @@ public class DangerFish : MonoBehaviour
             {
                 tp.balloonMode = false;
                 Destroy(tp.theBalloon);
-
-                Rigidbody2D trashRb = tp.GetComponent<Rigidbody2D>();
-                if (trashRb != null)
-                    trashRb.velocity = Vector2.down * 2f;
-
-                tp.draggedFish = null;
-                tp.SendMessage("ReleaseFish", SendMessageOptions.DontRequireReceiver);
+                GameManagerr.Instance.SoundPlay(0);
+                tp.ReleaseFish();
             }
-
-            Debug.Log("PufferFish meletuskan balon + trash jatuh ke bawah!");
         }
 
         yield return new WaitForSeconds(1f);
@@ -246,11 +238,6 @@ public class DangerFish : MonoBehaviour
 
                 rb.velocity = new Vector2(velocityX, 0f);
             }
-        }
-
-        if (animator != null && !string.IsNullOrEmpty(popTriggerName))
-        {
-            animator.SetTrigger(popTriggerName);
         }
 
         // Efek partikel
