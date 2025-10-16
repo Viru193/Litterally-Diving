@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer mixer;
-    public string musicVol = "MusicVol";
+    public string whichMixer;
+
+    public Sprite buttonMute, buttonUnmute;
+    private Image theButton;
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("MuteMusic") == 1)
+        theButton = GetComponent<Image>();
+
+        if (PlayerPrefs.GetInt(whichMixer) == 1)
         {
             MuteAudioGroup();
         }
@@ -19,20 +25,22 @@ public class AudioManager : MonoBehaviour
 
     public void MuteAudioGroup()
     {
-        mixer.SetFloat(musicVol, -80f);
-        PlayerPrefs.SetInt("MuteMusic", 1);
+        mixer.SetFloat(whichMixer, -80f);
+        PlayerPrefs.SetInt(whichMixer, 1);
+        UIButtonToggle(true);
     }
 
     public void UnmuteAudioGroup()
     {
-        mixer.SetFloat(musicVol, 0);
-        PlayerPrefs.SetInt("MuteMusic", 0);
+        mixer.SetFloat(whichMixer, 0);
+        PlayerPrefs.SetInt(whichMixer, 0);
+        UIButtonToggle(false);
     }
 
     public void ToggleMuteAudioGroup()
     {
         float volume;
-        mixer.GetFloat(musicVol, out volume);
+        mixer.GetFloat(whichMixer, out volume);
 
         if (volume <= -79f)
         {
@@ -41,6 +49,23 @@ public class AudioManager : MonoBehaviour
         else
         {
             MuteAudioGroup();
+        }
+    }
+
+    void UIButtonToggle(bool mode)
+    {
+        if (theButton)
+        {
+            if (buttonMute && buttonUnmute)
+            {
+                if (mode)
+                {
+                    theButton.sprite = buttonMute;
+                }else
+                {
+                    theButton.sprite = buttonUnmute;
+                }
+            }else Debug.Log("Button UI non-existent.");
         }
     }
 }
