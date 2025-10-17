@@ -47,12 +47,32 @@ public class Pause : MonoBehaviour
         {
             isSettings = false;
             settingsPanel.SetActive(false);
+<<<<<<< Updated upstream
         }else
         {
             isSettings = true;
             settingsPanel.SetActive(true);
         }
     }
+=======
+        }
+        else
+        {
+            isSettings = true;
+            settingsPanel.SetActive(true);
+
+            StartCoroutine(RefreshAudioButtonDelayed());
+        }
+    }
+    
+    private IEnumerator RefreshAudioButtonDelayed()
+    {
+        yield return null;
+
+        if (BGMManager.Instance != null)
+        BGMManager.Instance.RefreshUIButton();
+    }
+>>>>>>> Stashed changes
 
     public void CreditButton()
     {

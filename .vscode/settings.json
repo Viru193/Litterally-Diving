@@ -56,5 +56,9 @@
         "temp/": true,
         "Temp/": true
     },
+<<<<<<< Updated upstream
     "dotnet.defaultSolution": "Litterally-Diving.sln"
+=======
+    "dotnet.defaultSolution": "Litterally-Diving-fixing-everything.sln"
+>>>>>>> Stashed changes
 }

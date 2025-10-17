@@ -1590,6 +1590,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 7233714101125488, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 516967695071797528, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1598,10 +1605,56 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 518643377458973834, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 1098451565533044182, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BGMManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356302193075472847, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372107552084752814, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623387422095289027, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 1811339555391356510, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1642,6 +1695,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 1924337563372316180, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 1959827921365315434, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1654,6 +1714,61 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 1986362723795706385, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224832081236719655, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2684263632692824784, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331962632030504331, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769472626095803663, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836910610503043039, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274902062487679197, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514420346158544086, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514420346158544086, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514420346158544086, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514420346158544086, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523458526111690127, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759289569412811412, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 4778860694787116536, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1666,6 +1781,65 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 5010011069246363453, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110300859135945548, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197763236037526265, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6493066235623674245, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6493066235623674245, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546431042075879277, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013724078528047479, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065274649519073446, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429748498802105212, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454167965159187989, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552403841177286318, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774506071883288153, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813195648697469994, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248193596852259384, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 8755148812111294304, guid: 19295308c9fe5bc47a9a37f1fd608330, type: 3}
       propertyPath: farBackground
       value: 

@@ -106,6 +106,10 @@ MonoBehaviour:
   isFishL: 0
   isFishR: 0
   isShark: 0
+<<<<<<< Updated upstream
+=======
+  isPufferfish: 0
+>>>>>>> Stashed changes
   isDangerFish: 0
 --- !u!114 &4631114531061259247
 MonoBehaviour:
@@ -126,11 +130,19 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797626097625444588}
+<<<<<<< Updated upstream
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5016867910695370555, guid: c72e48b7f0ad1d94b8a74d04915bc0e0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 07dac4328b5beb8429acdd89a298a33b, type: 3}
   m_PlayOnAwake: 1
+=======
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5016867910695370555, guid: c72e48b7f0ad1d94b8a74d04915bc0e0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 07dac4328b5beb8429acdd89a298a33b, type: 3}
+  m_PlayOnAwake: 0
+>>>>>>> Stashed changes
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

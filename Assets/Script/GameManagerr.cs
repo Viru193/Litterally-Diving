@@ -171,9 +171,38 @@ public class GameManagerr : MonoBehaviour
 
     public void SoundPlay(int soundToPlay)
     {
-        soundEffects[soundToPlay].Stop();
+        if (BGMManager.Instance == null) return;
 
-        soundEffects[soundToPlay].Play();
+        switch (soundToPlay)
+        {
+            case 0:
+                BGMManager.Instance.PlayBalloonPop();
+                break;
+            case 1:
+                BGMManager.Instance.PlayOxygenPickup();
+                break;
+            case 2:
+                BGMManager.Instance.PlayGameplayClick();
+                break;
+            case 3:
+                BGMManager.Instance.PlayWarningSound();
+                break;
+            case 4:
+                BGMManager.Instance.PlayScoreSound();
+                break;
+            case 5:
+                BGMManager.Instance.PlayPlayerSplash();
+                break;
+            case 6:
+                BGMManager.Instance.PlayWhale();
+                break;
+            default:
+                Debug.LogWarning("Sound index tidak dikenal di GameManagerr: " + soundToPlay);
+                break;
+        }
+        // soundEffects[soundToPlay].Stop();
+
+        // soundEffects[soundToPlay].Play();
 
     }
 
@@ -281,6 +310,8 @@ public class GameManagerr : MonoBehaviour
 
     public void LoseFish()
     {
+        // BGMManager.Instance.PlayGeneralWarningSFX();
+        BGMManager.Instance.PlayGameOverSFX();
         SoundPlay(3);
         Time.timeScale = 0f;
         loseFishUI.SetActive(true);
@@ -288,6 +319,7 @@ public class GameManagerr : MonoBehaviour
 
     public void LoseOxygen()
     {
+        BGMManager.Instance.PlayGameOverSFX();
         SoundPlay(3);
         Time.timeScale = 0f;
         loseOxygenUI.SetActive(true);

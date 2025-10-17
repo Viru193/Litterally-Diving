@@ -17,6 +17,13 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsPanel;
     public Text highScorePanel;
 
+<<<<<<< Updated upstream
+=======
+    [Header("GForm Link")]
+    [Tooltip("Linknya bro")]
+    public string gFormURL = "https://torku.itch.io/litterally-diving";
+
+>>>>>>> Stashed changes
     private bool isInMenu;
 
     void Start()
@@ -74,6 +81,20 @@ public class MainMenu : MonoBehaviour
         mainMenuPanel.SetActive(true);
         optionPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        isInMenu = true;
+    }
+
+    public void OpenGForm() 
+    {
+        SoundPlay();
+        if (!string.IsNullOrEmpty(gFormURL)) 
+        {
+            Application.OpenURL(gFormURL);
+        }
+        else
+        {
+            Debug.LogWarning("Linknya Mana?????");
+        }
     }
 
     void SoundPlay()
