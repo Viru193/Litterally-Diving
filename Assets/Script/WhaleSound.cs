@@ -16,8 +16,18 @@ public class WhaleSound : MonoBehaviour
     {
         if (!hasPlayed)
         {
-            audioSource.Play();
+            BGMManager bgm = BGMManager.Instance;
+            if (bgm != null)
+            {
+                bgm.PlayWhale();
+            }
+
             hasPlayed = true;
         }
+    }
+
+    void OnBecameInvisible()
+    {
+        hasPlayed = false;
     }
 }
