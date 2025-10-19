@@ -130,9 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   isWhale: 0
-  isFishL: 1
+  isFishL: 0
   isFishR: 0
-  isShark: 0
+  isAlif: 0
+  isDicky: 1
   isPufferfish: 0
   isDangerFish: 0
 --- !u!70 &3173974034701026271
@@ -150,7 +151,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

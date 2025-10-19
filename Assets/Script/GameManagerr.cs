@@ -210,6 +210,7 @@ public class GameManagerr : MonoBehaviour
         currentOxygen += amount;
 
         currentOxygen = Mathf.Clamp(currentOxygen, 0, maxOksigen);
+        tankCount--;
 
         if (oxygenSlider != null)
             oxygenSlider.value = currentOxygen;

@@ -81,6 +81,7 @@ public class MainMenu : MonoBehaviour
     public void Menu()
     {
         SoundPlay();
+        isInMenu = true;
         mainMenuPanel.SetActive(true);
         optionPanel.SetActive(false);
         creditsPanel.SetActive(false);

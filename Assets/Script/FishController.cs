@@ -10,7 +10,7 @@ public class FishController : MonoBehaviour
     float originalSpeed;
     public bool isWhale;
     public bool isFishL, isFishR;
-    public bool isShark;
+    public bool isAlif, isDicky;
     public bool isPufferfish;
     public bool isDangerFish;
 
@@ -108,6 +108,14 @@ public class FishController : MonoBehaviour
             else if (isFishR)
             {
                 GameManagerr.Instance.fishCountR--;
+            }
+            else if (isAlif)
+            {
+                GameManagerr.Instance.alifCount--;
+            }
+            else if (isDicky)
+            {
+                GameManagerr.Instance.dickyCount--;
             }
             else if (isPufferfish)
             {
