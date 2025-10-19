@@ -154,6 +154,7 @@ MonoBehaviour:
   isFishL: 1
   isFishR: 0
   isShark: 0
+  isPufferfish: 0
   isDangerFish: 0
 --- !u!58 &8704549491362684151
 CircleCollider2D:
@@ -202,5 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9866346e6459438862024d45c6689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame1: {fileID: 1988858792, guid: 02c9c2a4b79fb9c47878735c66c6873a, type: 3}
-  frame2: {fileID: -916396782, guid: 02c9c2a4b79fb9c47878735c66c6873a, type: 3}
+  frames:
+  - {fileID: 1988858792, guid: 02c9c2a4b79fb9c47878735c66c6873a, type: 3}
+  - {fileID: -916396782, guid: 02c9c2a4b79fb9c47878735c66c6873a, type: 3}

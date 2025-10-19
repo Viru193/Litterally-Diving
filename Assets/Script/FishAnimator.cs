@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class FishAnimator : MonoBehaviour
 {
-    public Sprite frame1, frame2; 
+    public Sprite[] frames;
     SpriteRenderer sr;
+
+    private int currentFrame;
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        currentFrame = 0;
         StartCoroutine(Anim());
     }
 
     IEnumerator Anim()
     {
-        if (frame1 && frame2)
+        if (frames.Length > 0)
         {
-            sr.sprite = frame1;
+            sr.sprite = frames[currentFrame];
             yield return new WaitForSeconds(0.5f);
-            sr.sprite = frame2;
-            yield return new WaitForSeconds(0.5f);
+            currentFrame += 1;
+            if (currentFrame > (frames.Length - 1))
+            {
+                currentFrame = 0;
+            }
             StartCoroutine(Anim());
         }
     }

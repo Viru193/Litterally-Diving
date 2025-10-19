@@ -28,6 +28,9 @@ public class GameManagerr : MonoBehaviour
     public int alifCount;
     public int alifMax;
     [HideInInspector]
+    public int dickyCount;
+    public int dickyMax;
+    [HideInInspector]
     public int pufferfishCount;
     public int pufferfishMax;
     [HideInInspector]

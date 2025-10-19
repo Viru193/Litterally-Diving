@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
 
     private bool isInMenu;
 
+    public string gFormURL = "Masukan Link";
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -74,6 +76,15 @@ public class MainMenu : MonoBehaviour
         mainMenuPanel.SetActive(true);
         optionPanel.SetActive(false);
         creditsPanel.SetActive(false);
+    }
+
+    public void OpenGform()
+    {
+        SoundPlay();
+        if (!string.IsNullOrEmpty(gFormURL))
+        {
+            Application.OpenURL(gFormURL);
+        }
     }
 
     void SoundPlay()

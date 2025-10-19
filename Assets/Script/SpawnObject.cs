@@ -10,7 +10,8 @@ public class SpawnObject : MonoBehaviour
     public float timer = 3;
 
     public Vector2 maxSpawnPos, minSpawnPos;
-    public bool sampahMode, fishModeL, fishModeR, whaleMode, modeAlif, oxygenMode, pufferMode, dangerFishMode;
+    public bool sampahMode, fishModeL, fishModeR, whaleMode, modeAlif, 
+    modeDicky, oxygenMode, pufferMode, dangerFishMode;
 
     private Camera mainCamera;
 
@@ -33,6 +34,10 @@ public class SpawnObject : MonoBehaviour
         if (modeAlif)
         {
             StartCoroutine(SpawningAlifPurba());
+        }
+        if (modeDicky)
+        {
+            StartCoroutine(SpawningDickyMolaMola());
         }
         if (whaleMode)
         {
@@ -105,6 +110,19 @@ public class SpawnObject : MonoBehaviour
         }
     }
 
+    IEnumerator SpawningDickyMolaMola()
+    {
+        while (true)
+        {
+            if (GameManagerr.Instance.dickyCount < GameManagerr.Instance.dickyMax)
+            {
+                SpawningObject();
+                GameManagerr.Instance.dickyCount++;
+            }
+            yield return new WaitForSeconds(Random.Range(timer, (timer + 2)));
+        }
+    }
+
     IEnumerator SpawningWhale()
     {
         while (true)
@@ -122,7 +140,7 @@ public class SpawnObject : MonoBehaviour
     {
         while (true)
         {
-            if (GameManagerr.Instance.whaleCount < GameManagerr.Instance.tankMax)
+            if (GameManagerr.Instance.tankCount < GameManagerr.Instance.tankMax)
             {
                 SpawningObject();
                 GameManagerr.Instance.tankCount++;

@@ -154,6 +154,7 @@ MonoBehaviour:
   isFishL: 1
   isFishR: 0
   isShark: 0
+  isPufferfish: 0
   isDangerFish: 0
 --- !u!70 &3267707531514769493
 CapsuleCollider2D:
@@ -202,5 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9866346e6459438862024d45c6689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame1: {fileID: -900443829, guid: d1f8eb26efbb9994e9d8568e71ce109e, type: 3}
-  frame2: {fileID: 774624488, guid: d1f8eb26efbb9994e9d8568e71ce109e, type: 3}
+  frames:
+  - {fileID: -900443829, guid: d1f8eb26efbb9994e9d8568e71ce109e, type: 3}
+  - {fileID: 774624488, guid: d1f8eb26efbb9994e9d8568e71ce109e, type: 3}
