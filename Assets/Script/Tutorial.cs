@@ -4,30 +4,55 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-   public GameObject tutorialPanel;
+    public GameObject tutorialPanel, fishesPanel;
 
-    private string tutorialKey = "TutorialShown";
+    public bool shownTutorial, shownFishes;
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt(tutorialKey, 0) == 0)
-        {
-            if (tutorialPanel != null)
-                tutorialPanel.SetActive(true);
-        }
-        else
-        {
-            if (tutorialPanel != null)
-                tutorialPanel.SetActive(false);
-        }
+        shownTutorial = false;
+        shownFishes = false;
     }
 
-    public void CloseTutorial()
+    public void OpenOrCloseTutorial()
     {
-        if (tutorialPanel != null)
-            tutorialPanel.SetActive(false);
+        if (tutorialPanel != null) 
+        {
+            if (shownTutorial)
+            {
+                tutorialPanel.SetActive(false);
+                shownTutorial = false;
+            }else
+            {
+                tutorialPanel.SetActive(true);
+                shownTutorial = true;
+            }
+        }
+        PlaySound();
+    }
 
-        PlayerPrefs.SetInt(tutorialKey, 1);
-        PlayerPrefs.Save();
+    public void OpenOrCloseFishes()
+    {
+        if (fishesPanel != null) 
+        {
+            if (shownFishes)
+            {
+                fishesPanel.SetActive(false);
+                shownFishes = false;
+            }else
+            {
+                fishesPanel.SetActive(true);
+                shownFishes = true;
+            }
+        }
+        PlaySound();
+    }
+
+    void PlaySound()
+    {
+        if (GameManagerr.Instance != null)
+        {
+            GameManagerr.Instance.SoundPlay(2);
+        }
     }
 }

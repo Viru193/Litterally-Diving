@@ -36,6 +36,14 @@ public class MainMenu : MonoBehaviour
             {
                 QuitGame();
             }
+            else if (GetComponentInChildren<Tutorial>(true).shownTutorial)
+            {
+                GetComponentInChildren<Tutorial>(true).OpenOrCloseTutorial();
+            }
+            else if (GetComponentInChildren<Tutorial>(true).shownFishes)
+            {
+                GetComponentInChildren<Tutorial>(true).OpenOrCloseFishes();
+            }
             else Menu();
         }
     }

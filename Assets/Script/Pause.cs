@@ -17,10 +17,17 @@ public class Pause : MonoBehaviour
             {
                 PauseGame();
             }
+            else if (GetComponentInChildren<Tutorial>(true).shownTutorial)
+            {
+                GetComponentInChildren<Tutorial>(true).OpenOrCloseTutorial();
+            }
+            else if (GetComponentInChildren<Tutorial>(true).shownFishes)
+            {
+                GetComponentInChildren<Tutorial>(true).OpenOrCloseFishes();
+            }
             else if (isSettings)
             {
-                settingsPanel.SetActive(false);
-                creditPanel.SetActive(false);
+                SettingsButton();
             }
             else ResumeGame();
         }
